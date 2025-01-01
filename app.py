@@ -117,7 +117,7 @@ def main():
 
     if st.button("Llama2 Output"):
         with st.spinner("Processing..."):
-            faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings)
+            faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
             llm=get_llama2_llm()
             
             #faiss_index = get_vector_store(docs)
